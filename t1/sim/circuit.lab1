@@ -1,0 +1,41 @@
+*Title: lab1 circuit sim
+
+.options savecurrents
+
+*describtion 
+
+r7 a b 1.00
+r6 b c 2.08
+r4 c h 4.17
+
+*expression declaration
+*Vc=(v(c)-v(b))/2.08
+
+*dependent voltage source
+Hc a h Va 8.38  
+
+r5 h g 3.07
+Id a g 1.00
+
+*dependent current source
+Gb g f g f 7.31  
+
+r2 f e 2.01
+r1 e d 1.02
+Va d c 5.23
+.op
+.end
+ 
+ *control section 
+ .control 
+ op
+
+echo  "op_TAB" 
+ print all
+ echo  "op_END"
+ plot v(a) v(b) v(c) v(d) v(e) v(f) v(g) v(h)
+ 
+ .endc
+
+
+
