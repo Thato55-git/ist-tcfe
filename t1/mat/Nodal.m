@@ -22,3 +22,4 @@ Id;
 O]
  
  A\B
+ print(A\B);

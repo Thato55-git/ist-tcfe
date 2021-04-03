@@ -1,27 +1,27 @@
 \section{Theoretical Analysis}
 \label{sec:analysis}
-This section, the circuit shown in Figure~\ref{fig:rc} is analysed
+This section, the circuit shown in Figure 1 is analysed
 theoretically, in terms of nodal and mesh method.
 
-\section{Nodal method}
+\subsection{Nodal method}
 
-R\_1=1.0216234171
+$R_1=1.0216234171$
 
-R\_2=3.0213296603
+$R_2=3.0213296603$
 
-R\_4=4.17287588373
+$R_4=4.17287588373$
 
-R\_5=3.07453996538
+$R_5=3.07453996538$
 
-R\_6=2.06761158432
+$R_6=2.06761158432$
 
-R\_7=7.0023872588
+$R_7=7.0023872588$
 
-I\_d=1.00202530449
+$I_d=1.00202530449$
 
-K\_b=1.00202530449
+$K_b=1.00202530449$
 
-K\_c=8.38330387808
+$K_c=8.38330387808$
 
 
 The circuit has $7$ nodes,labeled as $1$ to $7$.Node $0$ is chosen as ground($V_0=0$).Using KCL for essential nodes(node 1,4,5,and 6),we have:
@@ -31,85 +31,90 @@ Node 1: $\frac{V_1}{R_7}+\frac{V_2-V_1}{R_6}$
 
 Using conductance, $G=\frac{1}{R}$, we get:
 
-$V_1*G_7+(V_2-V_1)-G_6$.....................................................(1)
+$V_1G_7+(V_2-V_1)-G_6$.....................................................(1)
 
 Node 4:
 
-$(V_3-V_4)*G_1-(V_4-V_7)*G_3+(V_5-V_4)*G_2$..................................(2)
+$(V_3-V_4)G_1-(V_4-V_7)G_3+(V_5-V_4)G_2$..................................(2)
 
 Node 5:
 
-$I_b=(V_5-V_4)*G_2$..........................................................(3)
+$I_b=(V_5-V_4)G_2$..........................................................(3)
 
 Node 6:
 
-$I_d-I_b=(V_6-V_7)*G_5$.......................................................(4)
+$I_d-I_b=(V_6-V_7)G_5$.......................................................(4)
 
-For node 7, $V_7=V_c=K_c*I_c$
+For node 7, $V_7=V_c=K_cI_c$
 
 
 Using octave to find the nodes voltages we get:
 
-$V_1=C_3$
+$V_1=C_3$\\
 
-$V_4=\frac{G_3*C_3+I_b}{G_1+G_3}$
+$V_4=\frac{G_3C_3+I_b}{G_1+G_3}$\\
 
-$V_5=\frac{G_2*G_3*C_3+I_b*(G_1+G_2+G_3)}{G_2*(G_1+G_3)}$
+
+$V_5=\frac{G_2G_3C_3+I_b(G_1+G_2+G_3)}{G_2(G_1+G_3)}$\\
+
 
 $V_6=C_3+\frac{I_d}{G_5}$
 
 Substituting with the known values we have:
 
-$V_1=3.02$
+$V_1=3.02$\\
 
-$C_3+3.0745=V_b$
+$C_3+3.0745=V_b$\\
 
-$V_6=6.09$
+$V_6=6.09$\\
 
-$0.68*C_3+I_b=V_5$
+$0.68C_3+I_b=V_5$\\
 
-$0.68(3.02)+I_b=V_5$
+$0.68(3.02)+I_b=V_5$\\
 
-$V_5=2.05+I_b$
+$V_5=2.05+I_b$\\
 
-$0.25(C_3+I_b)=V_4$
+$0.25(C_3+I_b)=V_4$\\
 
-$0.25(3.02+I_b)=V_4$
+$0.25(3.02+I_b)=V_4$\\
 
-$0.76+0.76*I_b=V_4$
+$0.76+0.76I_b=V_4$\\
 
-$\frac{-V_5-V_4}{R_2}+I_b$
+$\frac{-V_5-V_4}{R_2}+I_b$\\
 
-$\frac{-2.05-I_b*0.76-0.76*I_b}{2.01}=-I_b$
 
-$\frac{-2.70*I_b-0.76}{2.01}=-I_b$
+$\frac{-2.05-I_b0.76-0.76I_b}{2.01}=-I_b$\\
 
-$-2.70*I_b-0.76=-2.01*I_b$
 
-$0.69*I_b=0.76$
+$\frac{-2.70I_b-0.76}{2.01}=-I_b$\\
 
-$I_b=-1.10mA$
 
-$V_5=2.05-1.10$
+$-2.70I_b-0.76=-2.01I_b$\\
 
-$V_5=0.95v$
+$0.69I_b=0.76$\\
 
-$V_4=-0.076v$
+$I_b=-1.10mA$\\
 
-$V_4=0.076v$
+$V_5=2.05-1.10$\\
 
-$V_6=6.09V$
+$V_5=0.95v$\\
+
+$V_4=-0.076v$\\
+
+$V_4=0.076v$\\
+
+$V_6=6.09V$\\
 
 $V_1=3.02v$
 
 
-\section{Mesh method}
+\subsection{Mesh method}
 
 Using KVL to find the currents in a circuit in Figure~\ref{---------},we have:
 
 Mesh 1:
 
-$I_1=-I_b=-K_b*V_b$..............................................................(1)
+$I_1=-I_b=-K_bV_b$..............................................................(1)
 
 Mesh 2:
 
@@ -121,16 +126,34 @@ $-I_3(R_7+R_6+R_4)+R_4-I_4=V_c$.................................................
 
 Mesh 4:
 
-$I_1*R_3+I_3*R_4-I_4(R_1+R_3+R_4)=-V_a$
+$I_1R_3+I_3R_4-I_4(R_1+R_3+R_4)=-V_a$
 
 Using octave we get the values of currents as:
 
-$I_1=-I_b$
+$I_1=-I_b$\\
 
-$I_2=I_d$
+$I_2=I_d$\\
 
-$V_3=\frac{I_b*R-3*R_4-R_4*V_a+V_c(R_1+R_3+R_4)}{R_4^2-(R_1+R_3+R_4)*(R_4+R_6+R_7}$
+$I_3=\frac{I_bR-3R_4-R_4V_a+V_c(R_1+R_3+R_4)}{R_4^2-(R_1+R_3+R_4)(R_4+R_6+R_7}$\\
 
-$V_4=\frac{I_b*R_3*(R_4+R_6+R_7)+R_4*V_c-V_a(R_4+R_6+R_7)}{R_4^2-(R_1+R_3+R_4)(R_4+R_6+R_7}$
+
+$I_4=\frac{I_bR_3(R_4+R_6+R_7)+R_4V_c-V_a(R_4+R_6+R_7)}{R_4^2-(R_1+R_3+R_4)(R_4+R_6+R_7}$\\
+
+Sustituting and doing algebra we get values I as:
+
+$I_1=1.10mA$\\
+$I_2=1mA$\\
+$I_3=0.65mA$\\
+$I_4=1.44mA$\\
+
+Current that is flowing in each resister is:\\
+
+$I_{R_1}=1.44mA$\\
+$I_{R_2}=1.00mA$\\
+$I_{R_3}=0.34mA$\\
+$I_{R_4}=0.79mA$\\
+$I_{R_5}=0.1mA$\\
+$I_{R_6}=0.65mA$\\
+$I_{R_7}=0.65$\\
 
 

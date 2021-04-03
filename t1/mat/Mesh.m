@@ -16,3 +16,4 @@ O = vpa(0.0)
 C=[Z,O,O,O; O,Z,O,O; O,O,-R7-R4-R6,R4; R3,O,R4,-R1-R3-R4]
 D=[-Ib;Id;Vc;-Va]
 C\D
+print(C\D);

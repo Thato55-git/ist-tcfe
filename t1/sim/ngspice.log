@@ -1,0 +1,158 @@
+
+Circuit: *title: lab1 circuit sim
+
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+
+No. of Data Rows : 1
+op_TAB
+@gb[i] = -1.68378e-01
+@id[current] = 1.000000e+00
+@r1[i] = -1.68378e-01
+@r2[i] = -1.68378e-01
+@r4[i] = -2.66153e-01
+@r5[i] = -1.16838e+00
+@r6[i] = -9.77754e-02
+@r7[i] = -9.77754e-02
+a = -5.41101e+00
+b = -5.31323e+00
+c = -5.10986e+00
+d = 1.201401e-01
+e = -5.16055e-02
+f = -3.90045e-01
+g = -4.13079e-01
+h = -4.00000e+00
+hc#branch = -9.02225e-01
+va#branch = -1.68378e-01
+op_END
+ERROR: (internal)  This operation is not defined for display type printf.
+Can't open viewport for graphics.
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+
+No. of Data Rows : 1
+	Node                                  Voltage
+	----                                  -------
+	----	-------
+	d                                1.201401e-01
+	e                                -5.16055e-02
+	f                                -3.90045e-01
+	g                                -4.13079e-01
+	h                                -4.00000e+00
+	c                                -5.10986e+00
+	b                                -5.31323e+00
+	a                                -5.41101e+00
+
+	Source	Current
+	------	-------
+
+	@r1[i]                           -1.68378e-01
+	@r2[i]                           -1.68378e-01
+	@gb[i]                           -1.68378e-01
+	@r5[i]                           -1.16838e+00
+	@r4[i]                           -2.66153e-01
+	@r6[i]                           -9.77754e-02
+	@r7[i]                           -9.77754e-02
+	va#branch                        -1.68378e-01
+	hc#branch                        -9.02225e-01
+
+ Resistor models (Simple linear resistor)
+      model                     R
+
+        rsh                     0
+     narrow                     0
+      short                     0
+        tc1                     0
+        tc2                     0
+        tce                     0
+       defw                 1e-05
+          l                 1e-05
+         kf                     0
+         af                     0
+          r                     0
+     bv_max                 1e+99
+         lf                     1
+         wf                     1
+         ef                     1
+
+ CCVS: Linear current controlled current source
+     device                    hc
+          i             -0.902225
+          v              -1.41101
+          p               1.27305
+
+ Isource: Independent current source
+     device                    id
+         dc                     1
+          m                     1
+      acmag                     0
+      pulse         -
+        sin         -
+        exp         -
+        pwl         -
+       sffm         -
+         am         -
+    trnoise         -
+   trrandom         -
+          v               4.99793
+          p              -4.99793
+    current                     1
+
+ Resistor: Simple linear resistor
+     device                    r1                    r2                    r5
+      model                     R                     R                     R
+ resistance                  1.02                  2.01                  3.07
+         ac                  1.02                  2.01                  3.07
+      dtemp                     0                     0                     0
+     bv_max                 1e+99                 1e+99                 1e+99
+      noisy                     1                     1                     1
+          i             -0.168378             -0.168378              -1.16838
+          p             0.0289182             0.0569859               4.19088
+
+ Resistor: Simple linear resistor
+     device                    r4                    r6                    r7
+      model                     R                     R                     R
+ resistance                  4.17                  2.08                     1
+         ac                  4.17                  2.08                     1
+      dtemp                     0                     0                     0
+     bv_max                 1e+99                 1e+99                 1e+99
+      noisy                     1                     1                     1
+          i             -0.266153            -0.0977754            -0.0977754
+          p              0.295393             0.0198849            0.00956003
+
+ VCCS: Voltage controlled current source
+     device                    gb
+          m                     0
+          i             -0.168378
+          v            -0.0230339
+          p            0.00387841
+
+ Vsource: Independent voltage source
+     device                    va
+         dc                  5.23
+      acmag                     0
+      pulse         -
+        sin         -
+        exp         -
+        pwl         -
+       sffm         -
+         am         -
+    trnoise         -
+   trrandom         -
+          i             -0.168378
+          p              0.880617
+
+
+Total analysis time (seconds) = 0
+
+Total elapsed time (seconds) = 0.284 
+
+Total DRAM available = 4976.254 MB.
+DRAM currently available = 1572.766 MB.
+Total ngspice program size =   21.852 MB.
+Resident set size =    9.824 MB.
+Shared ngspice pages =    7.945 MB.
+Text (code) pages =    5.070 MB.
+Stack = 0 bytes.
+Library pages =    2.109 MB.
+
